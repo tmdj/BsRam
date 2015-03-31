@@ -1,0 +1,524 @@
+<!DOCTYPE html><!--[if IE 9]>
+<html class = "lt-ie10" lang = "en"> <![endif]-->
+<html class = "no-js" lang = "en">
+<head>
+    <meta charset = "utf-8">
+    <!-- If you delete this meta tag World War Z will become a reality -->
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Bulletin de salaire - assistant maternel</title>
+    <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <link rel = "stylesheet" href = "css/foundation.css">
+    <!-- If you are using the gem version, you need this only -->
+    <link rel = "stylesheet" href = "css/app.css">
+    <link rel = "stylesheet" href = "//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src = "js/vendor/modernizr.js"></script>
+    <script src = "js/vendor/jquery.js"></script>
+    <script src = "js/foundation.min.js"></script>
+    <script src = "//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src = "js/BS_RAM.js"></script>
+</head>
+<body>
+<style type = "text/css"></style>
+<nav class = "top-bar sticky" data-topbar role = "navigation">
+    <ul class = "title-area">
+        <li class = "name"><h1><a href = "#">Bulletin de salaire - assistant maternel</a></h1></li>
+    </ul>
+</nav>
+<dl class = "tabs" data-tab>
+    <dd><a href = "#DonneesPersonnelles">Données personnelles</a></dd>
+    <dd><a href = "#calculMensualisation">Calcul mensualisation</a></dd>
+    <dd><a href = "#compteRenduActivite">Compte rendu d'activité</a></dd>
+    <dd><a href = "#BulletinPaie">Bulletin paie</a></dd>
+    <dd><a href = "#Reajustement">Réajustement</a></dd>
+</dl>
+<div class = "tabs-content">
+    <div class = "content" id = "calculMensualisation">
+        <form>
+            <div class = "row">
+                <fieldset>
+                    <legend>Dates au contrat</legend>
+                    <div class = "small-6 columns">
+                        <label for = "DateDebutAcceuil">Date début d'acceuil</label> <input type = "date"
+                                                                                            placeholder = "Date début d'acceuil"
+                                                                                            id = "DateDebutAcceuil"/>
+                    </div>
+                    <div class = "small-6 columns">
+                        <label for = "DateDebutLissage">Date début lissage</label> <input type = "date"
+                                                                                          placeholder = "Date début lissage"
+                                                                                          id = "DateDebutLissage"/>
+                    </div>
+                </fieldset>
+            </div>
+            <div class = "row">
+                <fieldset>
+                    <legend>Tarifs (à négocier)</legend>
+                    <div class = "row"><!-- U -->
+                        <div class = "medium-6 columns">
+                            <label for = "TarifHoraireBrutBase">Tarif horaire brut de base</label><input type = "text"
+                                                                                                         placeholder = "Tarif horaire brut de base "
+                                                                                                         id = "TarifHoraireBrutBase"/>
+                        </div>
+                        <!-- U' -->
+                        <div class = "medium-6 columns">
+                            <label for = "TauxMajorationTarifBase">Taux de majoration du tarif de base</label><input
+                                type = "text"
+                                placeholder = "Taux de majoration du tarif de base"
+                                id = "TauxMajorationTarifBase"/>
+                        </div>
+                    </div>
+                    <div class = "row"><!-- T -->
+                        <div class = "small-4 columns">
+                            <label for = "MontantCongesPayesAnnuels">Montant des congés payés annuels</label> <input
+                                type = "text"
+                                disabled
+                                id = "MontantCongesPayesAnnuels"/>
+                        </div>
+                        <!-- T' -->
+                        <div class = "small-4 columns">
+                            <label for = "MontantCongésPayesMensuels">Montant des congés payés mensuels</label> <input
+                                type = "text"
+                                disabled
+                                id = "MontantCongésPayesMensuels"/>
+                        </div>
+                        <!-- V -->
+                        <div class = "small-4 columns">
+                            <label for = "TarifHoraireMajore">Tarif horaire majoré</label> <input type = "text"
+                                                                                                  disabled
+                                                                                                  id = "TarifHoraireMajore"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class = "row">
+                <fieldset>
+                    <legend>Horraires au contrat</legend>
+                    <div class = "row"><!-- A -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreJoursCompletsTravaillesParSemaine">Nombre de jours complets
+                                    travaillés par semaine</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre de jours complets travaillés par semaine"
+                                           id = "NombreJoursCompletsTravaillesParSemaine"
+                                           required/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Jours</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- B -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreHeuresTravailleesParJourComplet">Nombre d'heures travaillées par
+                                    jour complet</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre d'heures travaillées par jour complet"
+                                           id = "NombreHeuresTravailleesParJourComplet"
+                                           required/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Heures</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row"><!-- A' -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreJoursIncompletsTravaillesParSemaine">Nombre de jours incomplets
+                                    travaillés par semaine</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre de jours incomplets travaillés par semaine"
+                                           id = "NombreJoursIncompletsTravaillesParSemaine"
+                                           required/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Jours</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- B' -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreHeuresTravailleesParJourIncomplet">Nombre d'heures travaillées par
+                                    jour incomplet</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre d'heures travaillées par jour incomplet"
+                                           id = "NombreHeuresTravailleesParJourIncomplet"
+                                           required/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Heures</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row"><!-- C -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreMoisConsidereesPourLissage">Nombre de mois considérés dans l'année
+                                    pour le lissage</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre de mois considérés dans l'année pour le lissage"
+                                           id = "NombreMoisConsidereesPourLissage"
+                                           required/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Heures</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "medium-6 columns"><!-- N -->
+                            <div class = "row collapse">
+                                <label for = "NombreHeuresRemunereesSalaireBase">Nombre d'heures rémunérées au salaire
+                                    de base</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre d'heures rémunérées au salaire de base"
+                                           id = "NombreHeuresRemunereesSalaireBase"/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Heures/Semaine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class = "row">
+                <fieldset>
+                    <legend>Congés supplémentaires</legend>
+                    <div class = "row"><!-- I -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreSemainesSupplementairesCongesEmploye">Nombre de semaines de congés
+                                    demandées par l'employé</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre de semaines supplémentaires de congés demandées par l'employé"
+                                           id = "NombreSemainesSupplementairesCongesEmploye"/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Semaines</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- J -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreSemainesSupplementairesCongéEmployeur">Nombre de semaines de congés
+                                    et/ou RTT de l'employeur</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           placeholder = "Nombre de semaines supplémentaires de congés et (ou) RTT de l'employeur"
+                                           id = "NombreSemainesSupplementairesCongéEmployeur"/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Heures</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class = "row">
+                <fieldset>
+                    <legend>Durées Calculées</legend>
+                    <div class = "row"><!-- C' -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreSemainesConsidereesPourLissage">Nombre de semaines considérées pour
+                                    le lissage</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text" disabled id = "NombreSemainesConsidereesPourLissage"/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Semaines</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- D -->
+                        <div class = "medium-6 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreJoursOuvrablesCongesPayesAcquisParMoisTravaille">Nombre de jours
+                                    ouvrables de congés payés acquis par mois travaillé</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text"
+                                           disabled
+                                           id = "NombreJoursOuvrablesCongesPayesAcquisParMoisTravaille"/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Jours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "row"><!-- G -->
+                        <div class = "medium-4 columns">
+                            <div class = "row collapse">
+                                <label for = "SemainesCongesAcquisesSurPeriodeLissage">Semaines de congés acquises sur
+                                    la période du lissage</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text" disabled id = "SemainesCongesAcquisesSurPeriodeLissage"/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Semaines</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- G' -->
+                        <div class = "medium-4 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreSemaineCongesAcquisesRemunerer">Nombre de semaine de congés acquises
+                                    à rémunérer</label>
+
+                                <div class = "small-9 columns">
+                                    <input type = "text" disabled id = "NombreSemaineCongesAcquisesRemunerer"/>
+                                </div>
+                                <div class = "small-3 columns">
+                                    <span class = "postfix">Semaines</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- H -->
+                        <div class = "medium-4 columns">
+                            <div class = "row collapse">
+                                <label for = "NombreSemaineTravailRemunererDansAnnee">Nombre de semaine de travail à
+                                    rémunerer dans l'année</label>
+
+                                <div class = "small-8 columns">
+                                    <input type = "text" disabled id = "NombreSemaineTravailRemunererDansAnnee"/>
+                                </div>
+                                <div class = "small-4 columns">
+                                    <span class = "postfix">Semaines/An</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class = "row">
+                <fieldset>
+                    <legend>Total Horraires</legend>
+                    <div class = "row">
+                        <fieldset>
+                            <legend>par semaine</legend>
+                            <div class = "row"><!-- M -->
+                                <div class = "medium-6 columns">
+                                    <div class = "row collapse">
+                                        <label for = "NombreGlobaHeuresTravailleesProgrammeesParSemaine">Nombre global
+                                            d'heures travaillées programmées par semaine</label>
+
+                                        <div class = "small-9 columns">
+                                            <input type = "text"
+                                                   disabled
+                                                   id = "NombreGlobaHeuresTravailleesProgrammeesParSemaine"/>
+                                        </div>
+                                        <div class = "small-3 columns">
+                                            <span class = "postfix">Heures/Semaine</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- O -->
+                                <div class = "medium-6 columns">
+                                    <div class = "row collapse">
+                                        <label for = "NombreHeuresMajorees">Nombre d'heures majorées (à partir de la
+                                            46éme h hebdo)</label>
+
+                                        <div class = "small-9 columns">
+                                            <input type = "text" disabled id = "NombreHeuresMajorees"/>
+                                        </div>
+                                        <div class = "small-3 columns">
+                                            <span class = "postfix">Heures/Semaine</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class = "row">
+                        <fieldset>
+                            <legend>par mois</legend>
+                            <div class = "row"><!-- R -->
+                                <div class = "medium-6 columns">
+                                    <div class = "row collapse">
+                                        <label for = "TotalHeuresRemunereesSalaireBaseMois">Total d'heures rémunérées au
+                                            salaire de base / mois</label>
+
+                                        <div class = "small-9 columns">
+                                            <input type = "text" disabled id = "TotalHeuresRemunereesSalaireBaseMois"/>
+                                        </div>
+                                        <div class = "small-3 columns">
+                                            <span class = "postfix">Heures/Mois</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- S -->
+                                <div class = "medium-6 columns">
+                                    <div class = "row collapse">
+                                        <label for = "TotalHeuresMajoreesMois">Total d'heures majorées / mois</label>
+
+                                        <div class = "small-9 columns">
+                                            <input type = "text" disabled id = "TotalHeuresMajoreesMois"/>
+                                        </div>
+                                        <div class = "small-3 columns">
+                                            <span class = "postfix">Heures/Mois</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class = "row">
+                        <fieldset>
+                            <legend>par an</legend>
+                            <div class = "row"><!-- P -->
+                                <div class = "medium-6 columns">
+                                    <div class = "row collapse">
+                                        <label for = "TotalHeuresRemunereesSalaireBaseAn">Total d'heures rémunérées au
+                                            salaire de base / an</label>
+
+                                        <div class = "small-9 columns">
+                                            <input type = "text" disabled id = "TotalHeuresRemunereesSalaireBaseAn"/>
+                                        </div>
+                                        <div class = "small-3 columns">
+                                            <span class = "postfix">Heures/An</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Q -->
+                                <div class = "medium-6 columns">
+                                    <div class = "row collapse">
+                                        <label for = "TotalHeuresMajoreesAn">Total d'heures majorées / an</label>
+
+                                        <div class = "small-9 columns">
+                                            <input type = "text" disabled id = "TotalHeuresMajoreesAn"/>
+                                        </div>
+                                        <div class = "small-3 columns">
+                                            <span class = "postfix">Heures/An</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    <div class = "content" id = "DonneesPersonnelles">
+        <div class = "row">
+            <div class = "large-6 columns">
+                <fieldset>
+                    <legend>Employeur</legend>
+                    <div class = "row">
+                        <div class = "medium-6 columns">
+                            <label for = "NomEmployeur">Nom</label><input type = "text"
+                                                                          placeholder = "Nom"
+                                                                          id = "NomEmployeur"/>
+                        </div>
+                        <div class = "medium-6 columns">
+                            <label for = "PrenomEmployeur">Prénom</label><input type = "text"
+                                                                                placeholder = "Prénom"
+                                                                                id = "PrenomEmployeur"/>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "medium-12 columns">
+                            <label for = "AdresseEmployeur">Adresse</label><input type = "text"
+                                                                                  placeholder = "Adresse"
+                                                                                  id = "AdresseEmployeur"/>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "medium-6 columns">
+                            <label for = "CodePostalEmployeur">Code Postal</label><input type = "text"
+                                                                                         placeholder = "Code Postal"
+                                                                                         id = "CodePostalEmployeur"/>
+                        </div>
+                        <div class = "medium-6 columns">
+                            <label for = "VilleEmployeur">Ville</label><input type = "text"
+                                                                              placeholder = "Ville"
+                                                                              id = "VilleEmployeur"/>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "medium-12 columns">
+                            <label for = "NumeroURSSAFEmployeur">Numéro d’immatriculation à
+                                l’URSSAF</label><input type = "text"
+                                                       placeholder = "Numéro d’immatriculation à l’URSSAF"
+                                                       id = "numerourssafemployeur"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class = "large-6 columns">
+                <fieldset>
+                    <legend>Salarié</legend>
+                    <div class = "row">
+                        <div class = "medium-6 columns">
+                            <label for = "NomSalarie">Nom</label><input type = "text"
+                                                                        placeholder = "Nom"
+                                                                        id = "nomsalarie"/>
+                        </div>
+                        <div class = "medium-6 columns">
+                            <label for = "PrenomSalarie">Prénom</label><input type = "text"
+                                                                              placeholder = "Prénom"
+                                                                              id = "prenomsalarie"/>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "medium-12 columns">
+                            <label for = "AdresseSalarie">Adresse</label><input type = "text"
+                                                                                placeholder = "Adresse"
+                                                                                id = "adressesalarie"/>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "medium-6 columns">
+                            <label for = "CodePostalSalarie">Code Postal</label><input type = "text"
+                                                                                       placeholder = "Code Postal"
+                                                                                       id = "codepostalsalarie"/>
+                        </div>
+                        <div class = "medium-6 columns">
+                            <label for = "VilleSalarie">Ville</label><input type = "text"
+                                                                            placeholder = "Ville"
+                                                                            id = "villesalarie"/>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "medium-12 columns">
+                            <label for = "NumeroSecuriteSocialeSalarie">Numéro de Sécurité
+                                Sociale</label><input type = "text"
+                                                      placeholder = "Numéro de Sécurité Sociale"
+                                                      id = "NumeroSecuriteSocialeSalarie"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class = "content" id = "compteRenduActivite"></div>
+    <div class = "content" id = "BulletinPaie"></div>
+    <div class = "content" id = "Reajustement"></div>
+</div>
+</body>
+</html>
